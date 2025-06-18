@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Sidebar from "../components/Sidebar";
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/courses"; // Backend API URL
+const API_URL = "http://localhost:5000/api/courses"; 
 
 const Courses = () => {
   const [courses, setCourses] = useState([]);
@@ -141,7 +141,6 @@ const Courses = () => {
   );
 };
 
-// 🔹 Styles (Updated for Better UX/UI)
 const addButtonStyle = { padding: "10px", background: "#007bff", color: "white", border: "none", borderRadius: "5px", cursor: "pointer", marginBottom: "20px" };
 const tableStyle = { width: "100%", borderCollapse: "collapse", background: "white", borderRadius: "8px", overflow: "hidden" };
 const tableHeaderStyle = { padding: "12px", textAlign: "center", background: "#007bff", color: "white" };
