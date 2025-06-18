@@ -116,7 +116,7 @@ public class Dashboard extends AppCompatActivity {
     private void loadHomeFragment() {
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.frame_layout, new HomeFragment()) // Make sure this is your Fragment container ID
+                .replace(R.id.frame_layout, new HomeFragment())
                 .commit();
     }
 
