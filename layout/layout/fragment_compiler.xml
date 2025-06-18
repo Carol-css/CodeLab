@@ -1,0 +1,82 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Toolbar with Home Button -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:navigationIcon="@drawable/ic_home"
+        app:title="Compiler"
+        android:gravity="center"
+        app:titleTextColor="@android:color/white"
+        android:layout_marginBottom="10dp"/>
+
+    <Switch
+        android:id="@+id/themeSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:text="Dark Mode"/>
+
+
+    <!-- ScrollView to handle keyboard input properly -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+
+        <br.tiagohm.codeview.CodeView
+            android:id="@+id/codeView"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:minHeight="300dp"
+            android:background="@color/editor_background_dark"
+            android:visibility="visible"
+            android:layerType="software"/>
+
+
+
+    </ScrollView>
+
+    <EditText
+        android:id="@+id/inputText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter input (optional)"
+        android:minHeight="48dp"
+        android:imeOptions="actionDone"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/runButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Run Code"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+    <!-- Fixed-height Output Box -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:padding="8dp"
+        android:background="#121212">
+
+        <TextView
+            android:id="@+id/outputText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:text="Output will be shown here"
+            android:padding="10dp"/>
+    </ScrollView>
+
+</LinearLayout>

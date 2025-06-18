@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".SignupTabFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:padding="5dp">
+
+            <EditText
+                android:id="@+id/signup_name"
+                android:layout_width="300dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edit_text_bg"
+                android:drawableLeft="@drawable/ic_baseline_person_24"
+                android:drawablePadding="8dp"
+                android:textColor="#000000"
+                android:hint="Name"
+                android:textColorHint="#808080"
+                android:inputType="text"
+                android:padding="8dp" />
+
+            <EditText
+                android:id="@+id/signup_email"
+                android:layout_width="300dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/edit_text_bg"
+                android:drawableLeft="@drawable/ic_baseline_email_24"
+                android:drawablePadding="8dp"
+                android:textColor="#000000"
+                android:hint="Email"
+                android:textColorHint="#808080"
+                android:inputType="textEmailAddress"
+                android:padding="8dp" />
+
+            <EditText
+                android:id="@+id/signup_password"
+                android:layout_width="300dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:padding="8dp"
+                android:textColor="#000000"
+                android:hint="Password"
+                android:textColorHint="#808080"
+                android:inputType="textPassword"
+                android:drawableLeft="@drawable/ic_baseline_security_24"
+                android:drawableRight="@drawable/ic_eye_closed"
+                android:drawablePadding="8dp"
+                android:paddingEnd="10dp"
+                android:background="@drawable/edit_text_bg"/>
+
+            <EditText
+                android:id="@+id/signup_confirmpassword"
+                android:layout_width="300dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:padding="8dp"
+                android:textColor="#000000"
+                android:hint="Confirm Password"
+                android:textColorHint="#808080"
+                android:inputType="textPassword"
+                android:drawableLeft="@drawable/ic_baseline_security_24"
+                android:drawableRight="@drawable/ic_eye_closed"
+                android:drawablePadding="8dp"
+                android:paddingEnd="10dp"
+                android:background="@drawable/edit_text_bg"/>
+
+            <Button
+                android:layout_width="190dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:id="@+id/signupButton"
+                android:textSize="18sp"
+                android:text="SIGNUP"
+                app:cornerRadius = "30dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

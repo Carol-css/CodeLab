@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarBookmark"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/rate_gradient_bg"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical">
+
+            <!-- Back Arrow -->
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:padding="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_back_arrow"
+                android:contentDescription="Back" />
+
+            <!-- Title (Centered) -->
+            <TextView
+                android:id="@+id/toolbarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Bookmarks"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_centerInParent="true"/>
+
+            <!-- SearchView (Right-aligned) -->
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchViewBookmarks"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:padding="8dp"
+                android:queryHint="Search bookmarks..."
+                android:iconifiedByDefault="false"
+                android:background="?attr/selectableItemBackgroundBorderless"/>
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <!-- TabLayout for Bookmark Categories -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/bookmarktabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:tabIndicatorColor="@android:color/white"
+        app:tabTextColor="@color/black"
+        app:tabSelectedTextColor="@color/blue"
+        app:tabMode="scrollable">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabAll"
+            android:text="All"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"/>
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabJava"
+            android:text="Java"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"/>
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabPython"
+            android:text="Python"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"/>
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabCpp"
+            android:text="C++"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent" />
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tabJS"
+            android:text="Javascript"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent" />
+
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <!-- ViewPager2 to Switch Between Tabs -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/bookmarkviewPager"
+        android:layout_width="match_parent"
+        android:background="@drawable/rate_gradient_bg"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+
+</LinearLayout>

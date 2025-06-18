@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Static Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/rate_gradient_bg"
+        app:navigationIcon="@drawable/ic_back_arrow"
+        app:title="Settings"
+        app:titleTextColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Scrollable Content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:background="@drawable/rate_gradient_bg"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="15dp"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:text="User Account"
+                style="@style/SectionTitle"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        <!-- User Info Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp">
+
+            <ImageView
+                android:id="@+id/imgProfile"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/profileperson"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5dp"/>
+
+            <TextView
+                android:text="Your name"
+                style="@style/SectionTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nameInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:endIconDrawable="@drawable/ic_edit"
+                app:endIconMode="custom">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input_background"
+                    android:textColor="@color/white"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:text="About you"
+                style="@style/SectionTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/aboutInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Say something about you"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:endIconDrawable="@drawable/ic_edit"
+                app:endIconMode="custom">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etAbout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input_background"
+                    android:textColor="@color/white"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:text="Email"
+                style="@style/SectionTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_background"
+                android:enabled="false"
+                android:textColor="@color/white"
+                android:hint="Email"
+                android:drawableRight="@drawable/ic_badge_locked"
+                tools:ignore="TouchTargetSizeCheck"/>
+
+        </LinearLayout>
+
+        <!-- App Settings -->
+        <TextView
+            android:text="App Settings"
+            style="@style/SectionTitle"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Switch
+            android:id="@+id/switchSound"
+            style="@style/SwitchStyle"
+            android:text="Sound Effects"
+            android:background="@drawable/card_background"
+            android:textSize="15sp"
+            android:drawablePadding="8dp"
+            tools:ignore="TouchTargetSizeCheck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_sound"/>
+
+            <Switch
+                android:id="@+id/switchTheme"
+                style="@style/SwitchStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_background"
+                android:drawableLeft="@drawable/app_mode"
+                android:drawablePadding="8dp"
+                android:text="Dark Mode"
+                android:textSize="15sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        <!-- Account Settings -->
+        <TextView
+            android:text="Account"
+            style="@style/SectionTitle"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tvChangePassword"
+            android:text="Change Password"
+            android:background="@drawable/card_background"
+            style="@style/ListItemStyle"
+            android:textSize="15sp"
+            android:drawablePadding="8dp"
+            android:drawableLeft="@drawable/ic_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tvSetGoal"
+            android:text="Set Goal"
+            android:background="@drawable/card_background"
+            style="@style/ListItemStyle"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- Notifications -->
+        <TextView
+            android:text="Notifications"
+            style="@style/SectionTitle"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Switch
+            android:id="@+id/switchReminder"
+            style="@style/SwitchStyle"
+            android:background="@drawable/card_background"
+            android:textSize="15sp"
+            android:drawablePadding="8dp"
+            android:drawableLeft="@drawable/ic_setting_notification"
+            android:text="Daily Reminder"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/tvReminderTime"
+            android:text="Reminder Time"
+            android:background="@drawable/card_background"
+            style="@style/ListItemStyle"
+            android:textSize="15sp"
+            android:drawablePadding="8dp"
+            android:drawableLeft="@drawable/ic_clock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- Share -->
+        <TextView
+            android:text="Share"
+            style="@style/SectionTitle"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tvRateUs"
+            android:text="Rate us on Play Store"
+            android:background="@drawable/card_background"
+            style="@style/ListItemStyle"
+            android:textSize="15sp"
+            android:drawablePadding="8dp"
+            android:drawableLeft="@drawable/ic_rate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tvFollowX"
+            android:text="Follow us on X"
+            style="@style/ListItemStyle"
+            android:background="@drawable/card_background"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tvLikeFacebook"
+            android:text="Like us on Facebook"
+            style="@style/ListItemStyle"
+            android:background="@drawable/card_background"
+            android:textSize="15sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- Contact Us -->
+        <TextView
+            android:text="Contact Us"
+            style="@style/SectionTitle"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tvHelp"
+            android:text="Help"
+            style="@style/ListItemStyle"
+            android:background="@drawable/card_background"
+            android:textSize="15sp"
+            android:drawablePadding="8dp"
+            android:drawableLeft="@drawable/ic_help_center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tvTerms"
+            android:text="Terms and Conditions"
+            android:background="@drawable/card_background"
+            style="@style/ListItemStyle"
+            android:textSize="15sp"
+            android:drawablePadding="8dp"
+            android:drawableLeft="@drawable/ic_termscondition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tvPrivacy"
+            android:text="Privacy Policy"
+            android:background="@drawable/card_background"
+            style="@style/ListItemStyle"
+            android:textSize="15sp"
+            android:drawablePadding="8dp"
+            android:drawableLeft="@drawable/ic_badge_locked"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- Danger Zone -->
+        <TextView
+            android:text="Danger Zone"
+            style="@style/SectionTitle"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tvDeleteAccount"
+            android:text="Delete Account"
+            android:background="@drawable/card_background"
+            style="@style/ListItemStyle"
+            android:textSize="16sp"
+            android:drawablePadding="8dp"
+            android:drawableLeft="@drawable/ic_delete"
+            android:textColor="@color/red"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <!-- Logout Button -->
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LOG OUT"
+            android:textColor="@color/white"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:text="Version 1.0\n© 2025 CODELAB"
+            android:textSize="15sp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
