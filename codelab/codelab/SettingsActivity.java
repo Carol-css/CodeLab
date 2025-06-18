@@ -179,7 +179,7 @@ public class SettingsActivity extends AppCompatActivity {
     private void enableEditing(TextInputEditText editText, TextInputLayout layout) {
         editText.setEnabled(true);
         editText.requestFocus();
-        layout.setEndIconDrawable(R.drawable.ic_save); // Change icon to Save (💾)
+        layout.setEndIconDrawable(R.drawable.ic_save); 
 
         // Show keyboard
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -206,7 +206,7 @@ public class SettingsActivity extends AppCompatActivity {
                             loadUserData(user);
                             Toast.makeText(SettingsActivity.this, "Name updated!", Toast.LENGTH_SHORT).show();
                             editText.setEnabled(false);
-                            layout.setEndIconDrawable(R.drawable.ic_edit); // Switch back to Edit (✏️)
+                            layout.setEndIconDrawable(R.drawable.ic_edit); 
                         } else {
                             Toast.makeText(SettingsActivity.this, "Failed to update name", Toast.LENGTH_SHORT).show();
                         }
@@ -232,7 +232,7 @@ public class SettingsActivity extends AppCompatActivity {
                             loadUserData(user);
                             Toast.makeText(SettingsActivity.this, "Profile updated!", Toast.LENGTH_SHORT).show();
                             editText.setEnabled(false);
-                            layout.setEndIconDrawable(R.drawable.ic_edit); // Switch back to Edit (✏️)
+                            layout.setEndIconDrawable(R.drawable.ic_edit); 
                         } else {
                             Toast.makeText(SettingsActivity.this, "Failed to update profile", Toast.LENGTH_SHORT).show();
                         }
@@ -304,7 +304,7 @@ public class SettingsActivity extends AppCompatActivity {
 
 
     private void setGoal() {
-        // Add logic for setting a learning goal
+       
     }
 
     private void showTimePickerDialog() {
@@ -427,7 +427,7 @@ public class SettingsActivity extends AppCompatActivity {
         if (user != null) {
             // Get user's email and password for reauthentication
             String email = user.getEmail();
-            String password = "USER_PASSWORD"; // You need to get this from the user (e.g., prompt for password)
+            String password = "USER_PASSWORD"; 
 
             if (email != null && password != null) {
                 AuthCredential credential = EmailAuthProvider.getCredential(email, password);
