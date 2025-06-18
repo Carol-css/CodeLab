@@ -73,7 +73,7 @@ public class CompilerFragment extends Fragment {
         setupEditor();
         setupThemeSwitch();
 
-        // Run Button Click Listener
+        
         runButton.setOnClickListener(v -> executePythonCode());
 
         return view;
@@ -99,7 +99,7 @@ public class CompilerFragment extends Fragment {
 
     private void setupEditor() {
         if (isEditorInitialized) {
-            Log.d("CompilerFragment", "⚠️ CodeView already initialized, skipping...");
+            Log.d("CompilerFragment", "CodeView already initialized, skipping...");
             return;
         }
         isEditorInitialized = true;
@@ -108,17 +108,17 @@ public class CompilerFragment extends Fragment {
         applyTheme(isDarkMode);
 
         if (codeView == null) {
-            Log.e("CompilerFragment", "❌ CodeView is NULL!");
+            Log.e("CompilerFragment", "CodeView is NULL!");
             return;
         }
 
-        Log.d("CompilerFragment", "⚡ Setting up CodeView...");
+        Log.d("CompilerFragment", "Setting up CodeView...");
 
-        // ✅ Ensure CodeView is visible
+        // Ensure CodeView is visible
         codeView.setVisibility(View.VISIBLE);
         codeView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
 
-        // ✅ Set proper background color based on theme
+        // Set proper background color based on theme
         if (isDarkMode) {
             codeView.setTheme(Theme.MONOKAI);  // Dark Theme
             codeView.setBackgroundColor(Color.parseColor("#1E1E1E")); // Dark Gray
@@ -127,20 +127,20 @@ public class CompilerFragment extends Fragment {
             codeView.setBackgroundColor(Color.parseColor("#FFFFFF")); // White
         }
 
-        // ✅ Set default code & language
+        // Set default code & language
         codeView.setCode("print('Hello, World!')");
         codeView.setLanguage(Language.PYTHON);
         codeView.setZoomEnabled(true);
 
-        // 🔄 Force Layout Update
+        // Force Layout Update
         codeView.requestLayout();
         codeView.postInvalidate();
         codeView.post(() -> {
             codeView.reload();
-            Log.d("CompilerFragment", "🔄 CodeView reloaded!");
+            Log.d("CompilerFragment", "CodeView reloaded!");
         });
 
-        Log.d("CompilerFragment", "✅ CodeView setup complete!");
+        Log.d("CompilerFragment", "CodeView setup complete!");
     }
 
 
@@ -168,7 +168,7 @@ public class CompilerFragment extends Fragment {
             themeSwitch.setText("Dark Mode OFF");
         }
 
-        // 🔄 Reload CodeView without restarting activity
+        // Reload CodeView without restarting activity
         codeView.invalidate();
         codeView.post(() -> codeView.reload());
     }
@@ -184,11 +184,11 @@ public class CompilerFragment extends Fragment {
         String sourceCode = codeView.getCode();
         if (sourceCode.trim().isEmpty()) {
             Toast.makeText(getContext(), "No code to run!", Toast.LENGTH_SHORT).show();
-            Log.e("PythonExecution", "❌ Execution Blocked: No code provided.");
+            Log.e("PythonExecution", "Execution Blocked: No code provided.");
             return;
         }
 
-        Log.d("PythonExecution", "⚡ Running Code: " + sourceCode);
+        Log.d("PythonExecution", "Running Code: " + sourceCode);
 
         executorService.execute(() -> {
             String result = runPythonCode(sourceCode);
@@ -200,16 +200,16 @@ public class CompilerFragment extends Fragment {
     private String runPythonCode(String code) {
         if (!Python.isStarted()) {
             Python.start(new AndroidPlatform(requireContext()));
-            Log.d("PythonExecution", "🔵 Chaquopy initialized!");
+            Log.d("PythonExecution", "Chaquopy initialized!");
         }
 
         Python py = Python.getInstance();
         try {
             String result = py.getModule("script").callAttr("run_code", code).toString();
-            Log.d("PythonExecution", "✅ Execution Result: " + result);
+            Log.d("PythonExecution", "Execution Result: " + result);
             return result;
         } catch (Exception e) {
-            Log.e("PythonExecution", "❌ Execution Error: " + e.getMessage());
+            Log.e("PythonExecution", "Execution Error: " + e.getMessage());
             return "Error: " + e.getMessage();
         }
     }
