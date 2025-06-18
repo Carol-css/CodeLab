@@ -67,7 +67,7 @@ public class HomeFragment extends Fragment {
 
         // Initialize Toolbar
         toolbar = view.findViewById(R.id.toolbar);
-        drawerLayout = getActivity().findViewById(R.id.drawer_layout); // Ensure drawer is in Activity
+        drawerLayout = getActivity().findViewById(R.id.drawer_layout); 
         navigationView = getActivity().findViewById(R.id.nav_view);
 
         if (getActivity() instanceof AppCompatActivity) {
@@ -138,7 +138,7 @@ public class HomeFragment extends Fragment {
 
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-        Log.d("MENU_DEBUG", "onCreateOptionsMenu is called!"); // Debugging log
+        Log.d("MENU_DEBUG", "onCreateOptionsMenu is called!"); 
         menu.clear(); // Prevent duplicate items
         inflater.inflate(R.menu.home_toolbar_menu, menu);
         super.onCreateOptionsMenu(menu, inflater);
@@ -149,7 +149,7 @@ public class HomeFragment extends Fragment {
         if (item.getItemId() == R.id.action_notifications) {
             Intent intent = new Intent(getContext(), NotificationsActivity.class);
             startActivity(intent);
-            getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left); // Animation
+            getActivity().overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left); 
             return true;
         }
         return super.onOptionsItemSelected(item);
