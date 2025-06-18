@@ -23,7 +23,7 @@ public class RatingActivity extends AppCompatActivity {
     private EditText etFeedback;
     private Button btnSubmit;
 
-    @SuppressLint("MissingInflatedId") // Suppress warnings for missing ID checks
+    @SuppressLint("MissingInflatedId") 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
