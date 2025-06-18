@@ -44,7 +44,7 @@ public class MemesFragment extends Fragment {
                     // Navigate to HomeFragment when Home button is clicked
                     FragmentManager fragmentManager = getParentFragmentManager();
                     fragmentManager.beginTransaction()
-                            .replace(R.id.frame_layout, new HomeFragment()) // Replace with HomeFragment
+                            .replace(R.id.frame_layout, new HomeFragment()) 
                             .addToBackStack(null) // Optional: allows user to go back
                             .commit();
                 });
