@@ -68,7 +68,7 @@ public class Login_signup extends AppCompatActivity {
 
         // Configure Google Sign-In
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id)) // Get from Firebase settings
+                .requestIdToken(getString(R.string.default_web_client_id)) 
                 .requestEmail()
                 .build();
 
