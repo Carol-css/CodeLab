@@ -52,7 +52,7 @@ public class NewsFragment extends Fragment {
                     // Navigate to HomeFragment when Home button is clicked
                     FragmentManager fragmentManager = getParentFragmentManager();
                     fragmentManager.beginTransaction()
-                            .replace(R.id.frame_layout, new HomeFragment()) // Replace with HomeFragment
+                            .replace(R.id.frame_layout, new HomeFragment())
                             .addToBackStack(null) // Optional: allows user to go back
                             .commit();
                 });
@@ -72,7 +72,6 @@ public class NewsFragment extends Fragment {
         newsAdapter = new NewsAdapter(getContext(), newsList, this::openNewsDetail);
         recyclerView.setAdapter(newsAdapter);
 
-        // Load news
         loadNews();
 
         // Swipe to refresh
@@ -119,7 +118,7 @@ public class NewsFragment extends Fragment {
         );
 
         getParentFragmentManager().beginTransaction()
-                .replace(R.id.frame_layout, newsDetailFragment) // Replace with your container ID
+                .replace(R.id.frame_layout, newsDetailFragment) 
                 .addToBackStack(null)
                 .commit();
     }
