@@ -36,7 +36,7 @@ class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Course course = courseList.get(position);
-        holder.titleTextView.setText(course.getTitle());  // ✅ Use the getter method
+        holder.titleTextView.setText(course.getTitle());  
 
         holder.descriptionTextView.setText(course.getDescription());
 
@@ -77,18 +77,18 @@ class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.ViewHolder> {
 
         // Button Click Listener - Open JavaLang Activity only for "Java"
         holder.enrollButton.setOnClickListener(v -> {
-            if (course.getTitle().equalsIgnoreCase("Java")) {  // ✅ Use getter method
+            if (course.getTitle().equalsIgnoreCase("Java")) {  
                 Context context = v.getContext();
                 Intent intent = new Intent(context, JavaLang.class);
-                intent.putExtra("courseTitle", course.getTitle());  // ✅ Use getter method
+                intent.putExtra("courseTitle", course.getTitle());  
                 context.startActivity(intent);
             } else if (course.getTitle().equalsIgnoreCase("C")) {
                 Context context = v.getContext();
                 Intent intent = new Intent(context, CLang.class);
-                intent.putExtra("courseTitle", course.getTitle());  // ✅ Use getter method
+                intent.putExtra("courseTitle", course.getTitle());  
                 context.startActivity(intent);
             } else {
-                Toast.makeText(v.getContext(), "Enrolled in " + course.getTitle(), Toast.LENGTH_SHORT).show();  // ✅ FIXED
+                Toast.makeText(v.getContext(), "Enrolled in " + course.getTitle(), Toast.LENGTH_SHORT).show(); 
             }
         });
     }
