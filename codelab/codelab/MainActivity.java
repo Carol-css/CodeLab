@@ -22,13 +22,12 @@ import utils.SessionManager;
             Button logoutButton = findViewById(R.id.logoutButton);
             TextView welcomeText = findViewById(R.id.welcomeText);
 
-            // Display welcome message
             welcomeText.setText("Welcome to the Home Page!");
 
             logoutButton.setOnClickListener(v -> {
                 sessionManager.logout(); // Clear JWT token
                 startActivity(new Intent(MainActivity.this, Login_signup.class));
-                finish(); // Close HomeActivity
+                finish(); 
             });
         }
     }
