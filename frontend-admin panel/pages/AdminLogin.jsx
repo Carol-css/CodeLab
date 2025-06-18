@@ -20,10 +20,10 @@ const AdminLogin = () => {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
-      // 🔥 Get the ID token result to check admin claim
+      // Get the ID token result to check admin claim
       const tokenResult = await user.getIdTokenResult();
       if (tokenResult.claims.admin) {
-        navigate("/"); // ✅ Admin successfully logged in
+        navigate("/"); // Admin successfully logged in
       } else {
         setError("Access denied. Admin only.");
       }
