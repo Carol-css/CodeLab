@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 import axios from "axios";
 import { Bar, Line, Pie } from "react-chartjs-2";
-import "chart.js/auto"; // Ensure Chart.js is installed
+import "chart.js/auto"; 
 
-const API_URL = "http://localhost:5000/api/analytics"; // Adjust based on your backend
+const API_URL = "http://localhost:5000/api/analytics"; 
 
 const Analytics = () => {
   const [analytics, setAnalytics] = useState({
