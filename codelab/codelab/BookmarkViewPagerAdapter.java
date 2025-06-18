@@ -16,7 +16,7 @@ public class BookmarkViewPagerAdapter extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        return BookmarkListFragment.newInstance(categories[position]); // ✅ Correct way
+        return BookmarkListFragment.newInstance(categories[position]); 
     }
 
 
