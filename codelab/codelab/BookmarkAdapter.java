@@ -72,7 +72,7 @@ public class BookmarkAdapter extends RecyclerView.Adapter<BookmarkAdapter.ViewHo
         return bookmarkList.size();
     }
 
-    // ✅ 1️⃣ Filter Method (For Search Functionality)
+    // Filter Method (For Search Functionality)
     public void filter(String query) {
         if (query.isEmpty()) {
             bookmarkList = new ArrayList<>(fullList);
@@ -86,7 +86,7 @@ public class BookmarkAdapter extends RecyclerView.Adapter<BookmarkAdapter.ViewHo
     }
 
 
-    // ✅ 2️⃣ Update Bookmarks List (For Dynamic Data Changes)
+    // Update Bookmarks List (For Dynamic Data Changes)
     public void updateBookmarks(List<Bookmark> newBookmarks) {
         fullList.clear();
         fullList.addAll(newBookmarks);
