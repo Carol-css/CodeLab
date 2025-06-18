@@ -62,7 +62,7 @@ public class MemeAdapter extends RecyclerView.Adapter<MemeAdapter.MemeViewHolder
 
         holder.expandedImage.setImageResource(meme.getSecondImageRes());
 
-        // ✅ Fix scrolling issue: Allow touch gestures inside ScrollView
+        // Allow touch gestures inside ScrollView
         holder.scrollView.setOnTouchListener((v, event) -> {
             holder.scrollView.requestDisallowInterceptTouchEvent(true);
             return false;
