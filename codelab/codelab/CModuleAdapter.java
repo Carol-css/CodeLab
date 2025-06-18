@@ -56,7 +56,7 @@ public class CModuleAdapter extends RecyclerView.Adapter<CModuleAdapter.ModuleVi
 
         holder.playButton.setOnClickListener(v -> {
             if (position == 0) { // Only Module 1 opens the new page
-                Intent intent = new Intent(context, CContentM1.class); // Replace with your target activity
+                Intent intent = new Intent(context, CContentM1.class); 
                 intent.putExtra("MODULE_TITLE", module.getTitle());
                 context.startActivity(intent);
             } else {
