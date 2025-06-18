@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Sidebar from "../components/Sidebar";
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/notifications"; // Adjust based on your backend
+const API_URL = "http://localhost:5000/api/notifications"; 
 
 const Notifications = () => {
   const [notifications, setNotifications] = useState([]);
