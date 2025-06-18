@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Sidebar from "../components/Sidebar";
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/users"; // Adjust based on your backend URL
+const API_URL = "http://localhost:5000/api/users"; 
 
 const Users = () => {
   const [users, setUsers] = useState([]);
@@ -14,7 +14,7 @@ const Users = () => {
   const fetchUsers = async () => {
     try {
       const response = await axios.get(API_URL);
-      console.log("Fetched Users:", response.data); // Debugging log
+      console.log("Fetched Users:", response.data); 
       setUsers(response.data);
     } catch (error) {
       console.error("Error fetching users:", error);
