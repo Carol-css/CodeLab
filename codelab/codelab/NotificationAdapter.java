@@ -31,11 +31,11 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
         holder.message.setText(notification.getMessage());
         holder.date.setText(notification.getDate());
 
-        // Set icon based on notification type
+        
         if (notification.getType().equals("update")) {
-            holder.icon.setImageResource(R.drawable.ic_announcement); // Megaphone icon
+            holder.icon.setImageResource(R.drawable.ic_announcement); 
         } else {
-            holder.icon.setImageResource(R.drawable.ic_notification); // Bell icon
+            holder.icon.setImageResource(R.drawable.ic_notification); 
         }
     }
 
