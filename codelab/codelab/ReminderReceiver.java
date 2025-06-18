@@ -20,8 +20,7 @@ public class ReminderReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         createNotificationChannel(context);
 
-        // Intent to open the SettingsActivity when the user taps the notification
-        // Open HomeActivity when clicking on notification
+    
         Intent activityIntent = new Intent(context, Dashboard.class);
         activityIntent.putExtra("openHomeFragment", true);  // Pass an extra flag
 
@@ -34,7 +33,7 @@ public class ReminderReceiver extends BroadcastReceiver {
 
         // Build the notification
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
-                .setSmallIcon(R.drawable.ic_notification)  // Replace with your notification icon
+                .setSmallIcon(R.drawable.ic_notification)  
                 .setContentTitle("Code Learning Reminder")
                 .setContentText("Time for your scheduled coding session!")
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
