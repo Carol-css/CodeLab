@@ -42,7 +42,7 @@ public class BookmarkActivity extends AppCompatActivity {
         btnBack.setOnClickListener(v -> onBackPressed());
 
 
-        // ✅ Set up ViewPager2 with BookmarkViewPagerAdapter
+        // Set up ViewPager2 with BookmarkViewPagerAdapter
         adapter = new BookmarkViewPagerAdapter(this);
         viewPager.setAdapter(adapter);
 
