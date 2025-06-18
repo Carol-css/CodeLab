@@ -1,5 +1,5 @@
 import React from "react";
-import Sidebar from "../components/Sidebar"; // ✅ Now it's correct
+import Sidebar from "../components/Sidebar"; 
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import "../components/Dashboard.css";
 
